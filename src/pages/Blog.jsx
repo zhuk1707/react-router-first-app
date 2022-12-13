@@ -1,13 +1,32 @@
 import React from 'react';
+import {useState, useEffect} from "react";
+import {Link} from "react-router-dom";
 
 const Blog = () => {
+  const [posts, setPosts] = useState([])
+
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/posts?_limit=50')
+      .then(res => res.json())
+      .then(data => setPosts(data))
+  }, []);
+
   return (
-    <div>
+    <ul>
       <h1 className={'header-title'}>
-        This is <br/>
-        the coolest <mark>blog</mark>.
+        Our news:
       </h1>
-    </div>
+
+      <div className={'posts-list'}>
+        {
+          posts.map(post => (
+            <Link key={post.id} to={`/blog/${post.id}`}>
+              <li className={'posts-list__item'}>{post.title}</li>
+            </Link>
+          ))
+        }
+      </div>
+    </ul>
   );
 };
 
