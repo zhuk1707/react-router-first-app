@@ -4,7 +4,8 @@ const About = () => {
   return (
     <div>
       <h1 className={'header-title'}>
-        This page is <mark>about</mark> React Router 6.
+        This page is <mark>about</mark> <br/>
+        React Router 6.
       </h1>
     </div>
   );

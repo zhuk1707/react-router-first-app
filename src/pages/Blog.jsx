@@ -4,7 +4,8 @@ const Blog = () => {
   return (
     <div>
       <h1 className={'header-title'}>
-        This is the coolest <mark>blog</mark>.
+        This is <br/>
+        the coolest <mark>blog</mark>.
       </h1>
     </div>
   );

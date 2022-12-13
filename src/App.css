@@ -8,6 +8,7 @@ body {
     font-family: Inter, sans-serif;
     background-color: var(--white-color);
     color: var(--black-color);
+    height: 100%; /*!*/
 }
 
 a {
@@ -21,6 +22,16 @@ a {
     --white-color: #fcf0c8;
     --primary-color: #ff6600;
     --secondary-color: #7cb490;
+
+    --transition: all .10s ease-in;
+}
+
+/*------------*/
+
+.wrapper {
+    min-height: 100%; /*!*/
+    display: flex; /*!*/
+    flex-direction: column; /*!*/
 }
 
 .header {
@@ -33,17 +44,18 @@ a {
 .header > a {
     color: var(--white-color);
     padding: 16px 30px;
+
+    transition: var(--transition);
 }
 
-.header > a:hover {
+.header > a:hover, .active-link {
     background-color: var(--primary-color);
 }
 
 .header-title {
     text-align: center;
-    margin-top: 220px;
     font-weight: 900;
-    font-size: 48px;
+    font-size: 42px;
 }
 
 mark {
@@ -55,7 +67,37 @@ mark {
     text-align: center;
 }
 
-.header-subtitle a{
+.header-subtitle a {
     color: var(--secondary-color);
     border-bottom: 4px solid var(--secondary-color);
+}
+
+/*------------*/
+
+.main {
+    min-height: calc(100vh - 70px - 52px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*------------*/
+
+.footer {
+    background-color: var(--black-color);
+    font-size: 12px;
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer a {
+    color: var(--white-color);;
+
+    transition: var(--transition);
+}
+
+.footer a:hover {
+    background-color: var(--secondary-color);
+    color: var(--black-color);;
 }
